@@ -13,9 +13,26 @@ Por isso, lhes apresento hoje o doas, uma alternativa ao sudo, que veio direto d
 		<p>Os desenvolvedores do BSD chegaram a conclusão que o sudo é um programa, que como citei acima, não é user-Friendly, ou seja, é de difícil configuração para usuários novos que querem apenas baixar e usar.</p>
 
 		<h2>Instalação</h2>
-		<p>para os usuários de distros baseadas em Arch-Linux, o pacote está disponivel na AUR: <br><code>yay -S doas</code><br>
-		para usar o doas em distros Debian based, como o Ubuntu, o Linux Mint ou o próprio Debian use: <br><code>apt install doas</code>
+		<p>para os usuários de distros baseadas em Arch-Linux, o pacote está disponivel na AUR: <br><br><code>yay -S doas</code><br><br>
+		para usar o doas em distros Debian based, como o Ubuntu, o Linux Mint ou o próprio Debian use: <br><br><code>apt install doas</code><br><br>
+		se o doas não está nos repositórios da sua distro, você precisará compilar o código-fonte dele, que se encontra no <a href="https://github.com/slicer69/doas">GitHub do Doas.</a>
 		</p>	
+		<h2>Configuração</h2>
+		<p>escolha o seu editor de texto preferido para editar o arquivo de configurações, eu usarei o <b><i>neovim</i></b>:<br><br>
+		<code>nvim /etc/doas.conf<br><br></code>
+Não se assuste se o arquivo estiver vazio, pois quando o doas é instalado, o arquivo de configuração não é gerado automaticamente, logo, quando salvarmos, o doas usará o nosso arquivo como o padrão.
+
+no arquivo, escreva:<br><br>
+<code>permit seu_usuario as root</code><br><br>
+isso mesmo, somente uma unica linha! pouco comparado as quase 100 do sudo não é?
+
+Pronto, o seu doas está instalado!
+		</p>
+		<h2>Usando o doas!</h2>
+		<p>Normalmente, para atualizar o sistema utilizariamos:<br><br><code>sudo pacman -Syu</code><br><br>
+		Para utílizar o doas, apenas devemos trocar o <code>sudo</code> pelo <code>doas: </code><br><br><code>doas pacman -Syu</code><br><br> Pronto, agora você pode usar o doas em vez do sudo para seu sístema, garantindo uma execução um pouco mais rapida de alguns comandos; se quiser, você pode até colocar um alías no seu shell para rodar o doas quando digitar-mos sudo!</p> 
+		<h3>Para mais informações: </h3>
+		<p>basta rodar <code>man doas</code> no seu terminal!</p>
 	</body>
 </html>
 
